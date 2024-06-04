@@ -1,0 +1,16 @@
+{
+    "blogs": [
+        {
+            "title": "In May",
+            "author": "Elma",
+            "body": "From an Emerald Green Window",
+            "id": 1
+        },
+        {
+            "title": "August",
+            "author": "Amy",
+            "body": "A Certain Person, Moonlight",
+            "id": 2
+        }
+    ]
+}
