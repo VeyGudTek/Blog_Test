@@ -1,10 +1,12 @@
 import { useState } from "react"
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min"
 
 const Create = () => {
     const [title, setTitle] = useState("")
     const [body, setBody] = useState("")
     const [author, setAuthor] = useState("Elma")
     const [isLoading, setIsLoading] = useState(false)
+    const history = useHistory()
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -17,8 +19,8 @@ const Create = () => {
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(blog)
         }).then((res) => {
-            console.log(res)
             setIsLoading(false)
+            history.push('/')
         })
     }
 
