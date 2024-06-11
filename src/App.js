@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import Navbar from './Navbar'
 import Home from './Home'
 import Create from './Create'
-import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+import { BrowserRouter as Router, Route, Routes} from 'react-router-dom'
 import BlogDetails from './BlogDetails';
 import NotFound from './NotFound';
 
@@ -12,20 +12,17 @@ function App() {
       <div className="App">
         <Navbar/>
         <div className="content">
-          <Switch>
-            <Route exact path="/">
-              <Home/>
-            </Route>
-            <Route path="/create">
-              <Create/>
-            </Route>
-            <Route path="/blogs/:id">
-              <BlogDetails/>
-            </Route>
-            <Route path='*'>
-              <NotFound/>
-            </Route>
-          </Switch>
+          <Routes>
+            <Route path="/" element={<Home/>} />
+            <Route path="/create" element={<Create/>} />
+            <Route path="/blogs/:id" element={<BlogDetails/>} />
+            <Route path='*' element={<NotFound/>} />
+            <Route path="test" element={(
+              <div>
+                <h2>Test Page</h2>
+              </div>
+            )}/>
+          </Routes>
         </div>
       </div>
     </Router>
