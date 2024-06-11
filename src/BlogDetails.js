@@ -1,4 +1,5 @@
-import { useNavigate, useParams } from "react-router-dom"
+import { useNavigate, useParams, Route, Routes } from "react-router-dom"
+import Nested from './Nested'
 import useFetch from "./useFetch"
 
 const BlogDetails = () => {
@@ -26,6 +27,10 @@ const BlogDetails = () => {
                     <button onClick={handleDelete}>Delete</button>
                 </article>
                 )}
+
+            <Routes>
+                <Route path="/nested" element={<Nested />} />
+            </Routes>
         </div>
     )
 }

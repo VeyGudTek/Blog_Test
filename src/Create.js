@@ -1,5 +1,6 @@
 import { useState } from "react"
-import { useNavigate } from "react-router-dom"
+import { useNavigate, Route, Routes } from "react-router-dom"
+import Nested from "./Nested"
 
 const Create = () => {
     const [title, setTitle] = useState("")
@@ -51,6 +52,10 @@ const Create = () => {
                 {!isLoading && <button>Add Blog</button>}
                 {isLoading && <button disabled>Sending</button>}
             </form>
+
+            <Routes>
+                <Route path="/nested" element={<Nested />} />
+            </Routes>
         </div>
     )
 }
