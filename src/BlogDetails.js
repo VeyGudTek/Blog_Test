@@ -7,6 +7,10 @@ const BlogDetails = () => {
     const {data: blog, error, isLoading } = useFetch('http://localhost:5189/blogs/' + id)
     const navigate = useNavigate()
 
+    const handleUpdate = () => {
+        navigate('/update/' + id)
+    }
+
     const handleDelete = () => {
         fetch('http://localhost:5189/blogs/' + blog.id, {
             method: 'DELETE'
@@ -24,6 +28,7 @@ const BlogDetails = () => {
                     <h2>{blog.title}</h2>
                     <p>By {blog.author}</p>
                     <div>{blog.body}</div>
+                    <button onClick={handleUpdate}>Update</button> &nbsp;
                     <button onClick={handleDelete}>Delete</button>
                 </article>
                 )}
