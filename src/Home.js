@@ -3,7 +3,7 @@ import BlogList from './BlogList'
 import useFetch from './useFetch'
 
 const Home = () => {
-    const {data: blogs, isLoading, error} = useFetch('http://localhost:8000/blogs')
+    const {data: blogs, isLoading, error} = useFetch('http://localhost:5189/blogs')
 
     return ( 
         <div className="home">

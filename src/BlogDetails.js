@@ -4,11 +4,11 @@ import useFetch from "./useFetch"
 
 const BlogDetails = () => {
     const {id} = useParams()
-    const {data: blog, error, isLoading } = useFetch('http://localhost:8000/blogs/' + id)
+    const {data: blog, error, isLoading } = useFetch('http://localhost:5189/blogs/' + id)
     const navigate = useNavigate()
 
     const handleDelete = () => {
-        fetch('http://localhost:8000/blogs/' + blog.id, {
+        fetch('http://localhost:5189/blogs/' + blog.id, {
             method: 'DELETE'
         }).then(() => {
             navigate('/')
