@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import Navbar from './Navbar'
 import Home from './Home'
 import Create from './Create'
+import Update from './Update'
 import { BrowserRouter as Router, Route, Routes, Navigate} from 'react-router-dom'
 import {useState} from 'react'
 import BlogDetails from './BlogDetails';
@@ -18,6 +19,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home/>} />
             <Route path="/create/*" element={<Create/>} />
+            <Route path="/update/:id/*" element={<Update/>} />
             <Route path="/blogs/:id/*" element={<BlogDetails/>} />
             <Route path='*' element={<NotFound/>} />
             <Route path="/test" element={(
